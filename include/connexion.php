@@ -3,7 +3,7 @@
 require_once __DIR__ . '/fonctions.php'; 
 
 // 2. OBLIGATOIRE : On utilise __DIR__ pour être sûr de toujours trouver connect.php
-require_once __DIR__ . '/../connect.php';
+require_once __DIR__ . '/../config.php';
 
 // 3. Connexion au serveur (avec $connexion en minuscules !)
 $connexion = mysqli_connect($SERVEUR_BD, $LOGIN_BD, $PASS_BD);
