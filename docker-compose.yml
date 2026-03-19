@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    volumes:
+      - ./bd_data:/var/lib/mysql
+    environment:
+      - MARIADB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MARIADB_DATABASE=${NOM_BD}
+      - MARIADB_USER=${LOGIN_BD}
+      - MARIADB_PASSWORD=${PASS_BD}
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin
+    ports:
+      - "${PORT_PMA}:80"
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - mariadb
+
+  web:
+    container_name: web
+    image: monapache
+    ports:
+      - "${PORT_SITE}:80"
+    volumes:
+      - .:/var/www/html
+    environment:
+      - SERVEUR_BD=${SERVEUR_BD}
+      - LOGIN_BD=${LOGIN_BD}
+      - PASS_BD=${PASS_BD}
+      - NOM_BD=${NOM_BD}
+      - PORT_BD=${PORT_BD}
+    depends_on:
+      - mariadb
