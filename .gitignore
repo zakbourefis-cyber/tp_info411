@@ -1,2 +1,3 @@
 config.php
 .env
+maria_db/bd_data/
