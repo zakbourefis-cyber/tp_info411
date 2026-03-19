@@ -6,7 +6,7 @@ require_once __DIR__ . '/fonctions.php';
 require_once __DIR__ . '/../config.php';
 
 // 3. Connexion au serveur (avec $connexion en minuscules !)
-$connexion = mysqli_connect($SERVEUR_BD, $LOGIN_BD, $PASS_BD);
+$connexion = mysqli_connect($SERVEUR_BD, $LOGIN_BD, $PASS_BD, $NOM_BD, $PORT_BD);
 
 if (mysqli_connect_errno()) {
     echo 'Désolé, connexion au serveur ' . $SERVEUR_BD . ' impossible, ' . mysqli_connect_error(), "\n";
