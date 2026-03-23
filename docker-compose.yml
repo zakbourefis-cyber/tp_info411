@@ -17,7 +17,7 @@ services:
       PMA_ARBITRARY: 1
 
   web:
-    image: monapache
+    image: zakariabourefis/monapache
     ports:
       - ${PORT_SITE}:80
     volumes:
