@@ -1,0 +1,25 @@
+name : monProjet
+services:
+  mariadb :
+    image : monlogin/mamariadb
+    restart : always
+  environment :
+    MYSQL_DATABASE :
+    MYSQL_USER : ${LOGIN_BD:-userbd}
+    MYSQL_ROOT_PASSWORD : ${ROOT_PASSE_BD}  
+    MYSQL_PASSWORD : ${PASSE_BD}
+  volume : 
+    ./mariadb_data:/var/lib/mysql
+  apache :
+    image : monlogin/monapache
+    restart : always
+    environnement :
+    SERVEUR_BD :
+    LOGIN_BD : ${LOGIN_BD:-userbd}
+
+  
+
+  
+
+  
+  

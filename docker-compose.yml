@@ -1,6 +1,7 @@
 services:
   mariadb:
     image: mariadb
+    restart : always
     volumes:
       - ./bd_data:/var/lib/mysql
     environment:

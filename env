@@ -3,7 +3,7 @@ NOM_BD=location_voiture
 LOGIN_BD=utilisateur_test
 PASS_BD=mot_de_passe_test
 
-SERVEUR_BD=mariadb
+SERVEUR_BD=mariadb  
 PORT_BD=3306
 
 PORT_SITE=80
