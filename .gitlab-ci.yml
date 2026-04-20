@@ -11,5 +11,5 @@ deploy:
   - mkdir -p ~/.ssh
   - eval $(ssh-agent -s)
   script:
-    - echo "$SSH_KEY" | tr -d '\r' | ssh-add -
+    - ssh-add <(echo "$SSH_KEY")
     - ssh -o StrictHostKeyChecking=no  "$SSH_USER"@"$SSH_HOST" "cd $WORKDIR && git pull"
